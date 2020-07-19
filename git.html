@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./images/kbpr.png">
+    <style>
+       *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+       }
+       .main .navbar ul li .logo a{
+  font-family: 'Permanent Marker', cursive;
+}
+
+.main .navbar ul{
+    list-style: none;
+    text-align: right;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+.main .navbar ul li{
+    display: inline;
+    
+}
+.main .navbar ul li a{
+    color:#fff;
+    text-decoration: none;
+  text-transform: capitalize;
+  font-size: 20px;
+  padding: 0px 5px 50px 30px;
+}
+.navbar{
+    background: #000;
+    text-align: center;
+}
+       .intro{
+           text-transform: capitalize;
+           margin: 0 0px 0 250px;
+            color: #090a0b;
+            font-size: 1.5rem;
+            padding-top: 50px;
+            
+       }
+       .container{
+           margin: 0 350px 0 350px;
+       }
+       .title-img img{
+           margin-left: 250px;
+           margin-top: 40px;
+            width: 1050px;
+            height: 510px;
+            box-shadow: 0 0 25px 10px rgba(0,0,0,.25)
+       }
+       p{
+           padding-top: 20px;
+           color:#313B3F;
+           font-size: 15pt;
+           letter-spacing: .2px;
+       }
+       code{
+           text-decoration: underline;
+           text-decoration-color: white;
+           background: #6495ed;
+       }
+
+    </style>
+</head>
+<body>
+    <section class="main">
+        <div class="navbar">
+            <ul>
+               <li class="logo"><a href="home.html" style="float: left;font-family: 'Permanent Marker', cursive;padding-bottom: 5px;">KBPR</a></li>
+                <li><a href="home.html">home</a></li>
+                <li><a href="about.html">about</a></li>
+                <li><a href="https://github.com/Bharath-Kbpr">projects</a></li>
+                
+                <li><a href="contact.html">Portfolio</a></li>
+            </ul>
+            </div>
+    </section>
+    
+    <div class="intro">
+    <h1>git internals</h1>
+    </div>
+    <div class="title-img">
+    <img src="images/p2.png">
+    </div>
+    <div class="container">
+    <div class="parag">
+       <p>When a git repository is initialized on your PC, a hidden folder called <code>.git</code> is created. It contains all versions of your local files, your branch information, etc...</p>
+       <p>There is an important concept in git called Staging. It is used to keep your files tracked and updated. When you stage a file, a new version of that file is stored. How is it done? To understand that question, we need to know how git tracks files.</p>
+       <p>In the <code>.git</code> folder, there is another folder called objects. Whenever you stage a file, git hashes the content of your file and generates a 40-character SHA1 hash. This is what we discussed in the previous episode. As said, this hash is extremely sensitive which means that even a very slight change in your file will generate a completely different hash. So, why is this hash useful?</p>
+       <p>The <code>40-character hash</code> is used to create versions of your files. Ok, let's dig deeper. This is what happens when you stage a file:</p>
+       <ol>
+           <li>The file is scanned and a SHA1 hash is created.</li>
+           <li>The hash is divided into 2 parts, first 2 characters, and the remaining 38 characters.</li>
+           <li>Then, the file is compressed and stored.</li>
+           <li>It is stored in <code>.git/objects/< first_2_characters_of_hash>/< remaining_38_character_of_hash>.</code></li>
+           <li>By doing this, we can be sure that every version of the file is stored without collisions.</li>
+       </ol>
+       <p>Why is the hash separated into 2 parts? One of its answers is that some old filesystems don't support more than 64k files in a directory. So, this division solves the problem.</p>
+       <p><code>Commit:</code> It is used to save changes to the local repository. Every entity in git is named by a hash. The hash may depend on many factors such as tree_hash, commit_message, and even date. It also stores information such as the branch it belongs to.</p>
+       <p><code>Tree-Hash:</code> It is similar to commit_hash(commit's filename), here it is a tree's filename. This tree contains information about the files, it's content, etc... Every Tree points to a different version of the repository. For example,</p>
+     <img src=""> 
+       <p>Here, we create a file named<code> test-file.txt</code> and write <code>hello, world</code> to it.</p>
+       <p>We then stage the file using <code>git add .</code> and commit using<code> git commit -m.</code></p>
+       <p>Now a commit has been written. Then, we write a tree using<code> git write-tree</code> it takes a snapshot of the current version of the repository and saves it. We can see that it returned some hash back. It is the hash/filename of the tree that has just been written.</p>
+       <p>We can use <code>git cat-file -p <hash></code> command to view the contents of the hash. So, we do the same. So, it gives the state of the repository. It can be seen that there is the information of the snapshot taken. It lists the original-filename, hash, type of object (blob/tree/commit etc...), permissions.</p>
+       <img src="">
+       <p>Let's open the file manually first.</p>
+       <img src="">
+       <p>This is what we see. It is all gibberish because it has been compressed when written. As said, we can use <code>cat-file</code> to view its original content.</p>
+       <img src="">
+       <p>Boom! There is the <code>hello, world</code> we've written. This is how files are stored in git. Every file is considered a<code> blob</code> and every folder is considered to be a<code> tree.</code></p>
+       <p>Suppose, you have a folder. This is what happens:</p>
+      <img src="">
+       <p>We first<code> write-tree</code> after creating a folder. Then we view the tree using <code>cat-file.</code> We can see that there is a folder of object-type<code> tree.</code> If we again cat-file on its hash, we will see this:</p>
+       <img src="">
+       <p>There is that file we've created earlier. It is of type blob. So as you may have guessed what happens if we cat-file that file's hash:</p>
+       <img src="">
+       <p>There is the content we've written earlier. <code> is really fascinating how much powerful git is.</code></p>
+    </div>
+    </div>
+</body>
+</html>
