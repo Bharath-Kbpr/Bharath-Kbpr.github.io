@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharath Kbpr</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="./images/kbpr.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+    scroll-behavior: smooth;
+    
+}
+
+nav{
+    background: #000;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+}
+label.logo{
+    color: #ffffff;
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: capitalize;
+    line-height: 80px;
+    padding: 0 100px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #fff;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+a.active,a:hover{
+    text-decoration: line-through;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media(max-width:952px){
+    label.logo{
+        font-size: 16px;
+        padding-left: 0px;
+        
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media(max-width:858px){
+     .checkbtn{
+         display: block;
+
+     }
+     ul{
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         background: #2c3e50;
+         top: 230px;
+         left: -100%;
+         text-align: center;
+         transition: all .5s;
+        
+     }
+     nav ul li{
+         display: block;
+         
+     }
+     nav ul li a{
+         font-size: 20px;
+     }
+     a:hover,a:active{
+         text-decoration: line-through;
+         color: #fff;
+         transform: 0.5s;
+     }
+     #check:checked ~ ul{
+         left: 0;
+     }
+}
+.box1 .content img{
+    width: 50%;
+    box-shadow: 0 0 25px 10px rgba(0,0,0,.25);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: .8rem;
+}     
+.box1 .content h1{
+    padding-top: 150px;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 6rem;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.box1 .content h3
+{
+    padding-top: 100px;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 4rem;
+    padding-bottom: 30px;
+    text-align: center;
+}
+code{
+           text-decoration: underline;
+           text-decoration-color: white;
+           background: #6495ed;
+       }
+.box1 .content p{
+    margin: 50px 270px 50px 270px;
+    letter-spacing: 1pt;
+}
+
+@media(max-width:858px){
+.box1 .content p{
+    margin: 20px 30px 20px 30px;
+    letter-spacing: 1pt;
+      }
+      .box1 .content h1{
+          font-size: 3rem;
+      } 
+      .box1 .content img{
+          width: 350px;
+      } 
+}
+
+  .footer {
+    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    padding-top: 3px;
+    color: #fff;
+    text-align: center;
+    }
+    .footer p{
+     padding-top: 15px;
+    }
+ 
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo"><a href="index.html" style="text-decoration:none;color:#fff;font-family: 'Permanent Marker', cursive; "> kbpr</a></label>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="https://github.com/Bharath-Kbpr">projects</a></li>
+            <li><a href="portfolio.html">portfolio</a></li>
+        </ul>
+    </nav>
+    <section class="box1" id="about">
+        <div class="content">
+        <h1>Open CV</h1>
+        <img src="img/opencv1.PNG"alt="computer vision">
+        <h1>What is Computer Vision?</h1>
+         <p>Let me quickly explain what computer vision is before we dive into OpenCV. It’s good to have an intuitive understanding of what we’ll be talking about through the rest of the article.</p>
+
+         <p>The ability to see and perceive the world comes naturally to us humans. It’s second nature for us to gather information from our surroundings through the gift of vision and perception.</p>
+         <img src="img/opencv2.PNG"alt="computer vision">
+         <p>Take a quick look at the above image. It takes us less than a second to figure out there’s a cat, a dog and a pair of human legs. When it comes to machines, this learning process becomes complicated. The process of parsing through an image and detecting objects involves multiple and complex steps, including feature extraction (edges detection, shapes, etc), feature classification, etc.</p>
+         <h3>What Is OpenCV?</h3>
+         <p>OpenCV is a Python library which is designed to solve computer vision problems. OpenCV was originally developed in 1999 by Intel but later it was supported by Willow Garage.
+         
+         <p>OpenCV supports a wide variety of programming languages such as C++, Python, Java etc. Support for multiple platforms including Windows, Linux, and MacOS.
+         
+         <p>OpenCV Python is nothing but a wrapper class for the original C++ library to be used with Python. Using this, all of the OpenCV array structures gets converted to/from NumPy arrays.</p>
+         <p>This makes it easier to integrate it with other libraries which use NumPy. For example, libraries such as SciPy and Matplotlib.</p>
+         <p>Next up on this OpenCV Python Tutorial blog, let us look at some of the basic operations that we can perform with OpenCV. </p>
+         <h3>How Does A Computer Read An Image?</h3>
+         <p>Consider the below image:</p>
+         <img src="img/opencv3.PNG"alt="computer vision">
+         <p>We can figure out that it is an image of the New York Skyline. But, can a computer find this out all on its own? The answer is no!</p>
+         <p>The computer reads any image as a range of values between 0 and 255.</p>
+         <p>For any color image, there are 3 primary channels – Red, green and blue. How it works is pretty simple.</p>
+         <p>A matrix is formed for every primary color and later these matrices combine to provide a Pixel value for the individual R, G, B colors.</p>
+         <p>Each element of the matrices provide data pertaining to the intensity of brightness of the pixel.</p>
+         <p>Consider the following image:
+        <img src="img/opencv4.PNG"alt="computer vision">
+         <p>Note: For a black-white image, there is only one single channel.</p>
+        </div>
+      </section >
+</body>
+</html>

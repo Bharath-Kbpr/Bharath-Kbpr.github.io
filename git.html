@@ -3,106 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git</title>
+    <title>Bharath Kbpr</title>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="./images/kbpr.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
-       *{
+        *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "poppins",sans-serif;
-       }
-       .main .navbar ul li .logo a{
-  font-family: 'Permanent Marker', cursive;
-}
-
-.main .navbar ul{
-    list-style: none;
-    text-align: right;
-    padding-top: 40px;
-    padding-bottom: 20px;
-}
-.main .navbar ul li{
-    display: inline;
+    scroll-behavior: smooth;
     
 }
-.main .navbar ul li a{
-    color:#fff;
-    text-decoration: none;
-  text-transform: capitalize;
-  font-size: 20px;
-  padding: 0px 5px 50px 30px;
-}
-.navbar{
+
+nav{
     background: #000;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+}
+label.logo{
+    color: #ffffff;
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: capitalize;
+    line-height: 80px;
+    padding: 0 100px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #fff;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+a.active,a:hover{
+    text-decoration: line-through;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media(max-width:952px){
+    label.logo{
+        font-size: 16px;
+        padding-left: 0px;
+        
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media(max-width:858px){
+     .checkbtn{
+         display: block;
+
+     }
+     ul{
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         background: #2c3e50;
+         top: 230px;
+         left: -100%;
+         text-align: center;
+         transition: all .5s;
+        
+     }
+     nav ul li{
+         display: block;
+         
+     }
+     nav ul li a{
+         font-size: 20px;
+     }
+     a:hover,a:active{
+         text-decoration: line-through;
+         color: #fff;
+         transform: 0.5s;
+     }
+     #check:checked ~ ul{
+         left: 0;
+     }
+}
+.box1 .content img{
+    width: 50%;
+    box-shadow: 0 0 25px 10px rgba(0,0,0,.25);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: .8rem;
+}     
+.box1 .content h1{
+    padding-top: 150px;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 6rem;
+    padding-bottom: 40px;
     text-align: center;
 }
-       .intro{
-           text-transform: capitalize;
-           margin: 0 0px 0 250px;
-            color: #090a0b;
-            font-size: 1.5rem;
-            padding-top: 50px;
-            
-       }
-       .container{
-           margin: 0 350px 0 350px;
-       }
-       .title-img img{
-           margin-left: 250px;
-           margin-top: 40px;
-            width: 1050px;
-            height: 510px;
-            box-shadow: 0 0 25px 10px rgba(0,0,0,.25)
-       }
-       p{
-           padding-top: 20px;
-           color:#313B3F;
-           font-size: 15pt;
-           letter-spacing: .2px;
-       }
-       code{
+code{
            text-decoration: underline;
            text-decoration-color: white;
            background: #6495ed;
        }
+.box1 .content p{
+    margin: 50px 270px 50px 270px;
+    letter-spacing: 1pt;
+}
 
+@media(max-width:858px){
+.box1 .content p{
+    margin: 20px 30px 20px 30px;
+    letter-spacing: 1pt;
+      }
+      .box1 .content h1{
+          font-size: 3rem;
+      } 
+      .box1 .content img{
+          width: 350px;
+      } 
+}
+
+  .footer {
+    
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #000;
+    padding-top: 3px;
+    color: #fff;
+    text-align: center;
+    }
+    .footer p{
+     padding-top: 15px;
+    }
+ 
     </style>
 </head>
 <body>
-    <section class="main">
-        <div class="navbar">
-            <ul>
-               <li class="logo"><a href="home.html" style="float: left;font-family: 'Permanent Marker', cursive;padding-bottom: 5px;">KBPR</a></li>
-                <li><a href="index.html">home</a></li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="https://github.com/Bharath-Kbpr">projects</a></li>
-                
-                <li><a href="contact.html">Portfolio</a></li>
-            </ul>
-            </div>
-    </section>
-    
-    <div class="intro">
-    <h1>git internals</h1>
-    </div>
-    <div class="title-img">
-    <img src="images/p2.png">
-    </div>
-    <div class="container">
-    <div class="parag">
-       <p>When a git repository is initialized on your PC, a hidden folder called <code>.git</code> is created. It contains all versions of your local files, your branch information, etc...</p>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo"><a href="index.html" style="text-decoration:none;color:#fff;font-family: 'Permanent Marker', cursive; "> kbpr</a></label>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="https://github.com/Bharath-Kbpr">projects</a></li>
+            <li><a href="portfolio.html">portfolio</a></li>
+        </ul>
+    </nav>
+    <section class="box1" id="about">
+        <div class="content">
+        <h1>Git</h1>
+        <img src="img/p2.png"alt="git">
+        <p>When a git repository is initialized on your PC, a hidden folder called <code>.git</code> is created. It contains all versions of your local files, your branch information, etc...</p>
        <p>There is an important concept in git called Staging. It is used to keep your files tracked and updated. When you stage a file, a new version of that file is stored. How is it done? To understand that question, we need to know how git tracks files.</p>
        <p>In the <code>.git</code> folder, there is another folder called objects. Whenever you stage a file, git hashes the content of your file and generates a 40-character SHA1 hash. This is what we discussed in the previous episode. As said, this hash is extremely sensitive which means that even a very slight change in your file will generate a completely different hash. So, why is this hash useful?</p>
        <p>The <code>40-character hash</code> is used to create versions of your files. Ok, let's dig deeper. This is what happens when you stage a file:</p>
-       <ol>
+       <!-- <ol>
            <li>The file is scanned and a SHA1 hash is created.</li>
            <li>The hash is divided into 2 parts, first 2 characters, and the remaining 38 characters.</li>
            <li>Then, the file is compressed and stored.</li>
            <li>It is stored in <code>.git/objects/< first_2_characters_of_hash>/< remaining_38_character_of_hash>.</code></li>
            <li>By doing this, we can be sure that every version of the file is stored without collisions.</li>
-       </ol>
+       </ol> -->
        <p>Why is the hash separated into 2 parts? One of its answers is that some old filesystems don't support more than 64k files in a directory. So, this division solves the problem.</p>
        <p><code>Commit:</code> It is used to save changes to the local repository. Every entity in git is named by a hash. The hash may depend on many factors such as tree_hash, commit_message, and even date. It also stores information such as the branch it belongs to.</p>
        <p><code>Tree-Hash:</code> It is similar to commit_hash(commit's filename), here it is a tree's filename. This tree contains information about the files, it's content, etc... Every Tree points to a different version of the repository. For example,</p>
@@ -124,7 +212,7 @@
        <p>There is that file we've created earlier. It is of type blob. So as you may have guessed what happens if we cat-file that file's hash:</p>
        <img src="">
        <p>There is the content we've written earlier. <code> is really fascinating how much powerful git is.</code></p>
-    </div>
-    </div>
+        </div>
+      </section >
 </body>
 </html>

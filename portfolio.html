@@ -16,37 +16,101 @@
     scroll-behavior: smooth;
     
 }
-.main .navbar ul li .logo a{
-  font-family: 'Permanent Marker', cursive;
-}
 
-.main .navbar ul{
-    list-style: none;
-    text-align: right;
-    padding-top: 40px;
-    padding-bottom: 20px;
-}
-.main .navbar ul li{
-    display: inline;
-    
-}
-.main .navbar ul li a{
-    color:#fff;
-    text-decoration: none;
-  text-transform: capitalize;
-  font-size: 20px;
-  padding: 0px 5px 50px 30px;
-}
-.navbar{
+nav{
     background: #000;
-    text-align: center;
+    color: #fff;
+    position: fixed;
+    width: 100%;
 }
-        .box2 .ani {
-    padding-top: 250px;
-    font-size: 50px;
-    padding-left: 400px;
+label.logo{
+    color: #ffffff;
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: capitalize;
+    line-height: 80px;
+    padding: 0 100px;
 }
-        .box2{
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #fff;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+a.active,a:hover{
+    text-decoration: line-through;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media(max-width:952px){
+    label.logo{
+        font-size: 16px;
+        padding-left: 0px;
+        
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media(max-width:858px){
+     .checkbtn{
+         display: block;
+
+     }
+     ul{
+       position: absolute;
+         
+         width: 100%;
+         height: 100vh;
+         background: #2c3e50;
+         top: 230px;
+         left: -100%;
+         text-align: center;
+         transition: all .5s;
+         
+        
+     }
+     nav ul li{
+         display: block;
+         
+     }
+     nav ul li a{
+         font-size: 20px;
+     }
+     a:hover,a:active{
+         text-decoration: line-through;
+         color: #fff;
+         transform: 0.5s;
+     }
+     #check:checked ~ ul{
+         left: 0;
+     }
+}
+      
+
+ /* .box2{
      background: #ffffff;
     width: 100%;
     height: 100vh;
@@ -55,21 +119,29 @@
     position: relative;
     background-repeat: no-repeat;
     
-}
+} */
 .box2 .contt h2{
     color: #000;
     text-align: center;
     padding-left: 0;
-    
+    font-weight: 500;
+    font-size: 2.5rem;
     padding-top: 100px;
 
+}
+@media(max-width:858px){
+    .box2 .contt h2{
+        font-size: 1rem;
+        padding-top: 40px;
+        font-weight: 400;
+    }
 }
 .box2 .contt h1{
     font-size: 300;
     font-size: 2.4rem;
     text-align: center;
-    padding-top: 60px;
-}
+    padding-top: 140px;
+} 
 
 
 .middle{
@@ -88,8 +160,8 @@
     border-radius: 30%;
     box-shadow: 0 5px 15px -5px #00000070;
     color: #000;
-    overflow: hidden;
-    position: relative;
+    /* overflow: hidden; */
+    
   }
   .btn i{
     line-height: 90px;
@@ -97,10 +169,10 @@
     transition: 0.2s linear;
   }
   .btn:hover i{
-    transform: scale(1.3);
-    color: #f1f1f1;
+    font-size: 36px;
+    
   }
-  .btn::before{
+  /* .btn::before{
     content: "";
     position: absolute;
     width: 120%;
@@ -114,22 +186,21 @@
     animation: aaa 0.7s 1;
     top: -10%;
     left: -10%;
-  }
+  } */
   .footer {
     
+    position: fixed;
     left: 0;
     bottom: 0;
-    height: 50px;
     width: 100%;
-    background-color: #000;
-    color: white;
+    background: #000;
+    padding-top: 3px;
+    color: #fff;
     text-align: center;
-    z-index: 1;
-    text-align: center;
- }
- .footer p{
-   padding-top: 15px;
- }
+    }
+    .footer p{
+     padding-top: 15px;
+    }
   @keyframes aaa {
     0%{
       left: -110%;
@@ -145,19 +216,21 @@
     </style>
 </head>
 <body>
-    <section class="main">
-        <div class="navbar">
-            <ul>
-               <li class="logo"><a href="home.html" style="float: left;font-family: 'Permanent Marker', cursive;padding-bottom: 5px;">KBPR</a></li>
-                <li><a href="index.html">home</a></li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="https://github.com/Bharath-Kbpr">projects</a></li>
-                
-                <li><a href="contact.html">Portfolio</a></li>
-            </ul>
-            </div>
-    </section>
-    <section class="box2" >
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo"><a href="index.html" style="text-decoration:none;color:#fff;font-family: 'Permanent Marker', cursive; "> kbpr</a></label>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="about.html">about</a></li>
+            <li><a href="https://github.com/Bharath-Kbpr">projects</a></li>
+            <li><a href="portfolio.html">portfolio</a></li>
+        </ul>
+    </nav>
+
+     <section class="box2" >
         <div class="contt">
           <h1>Portfolio</h1>
           <h2 class="ani">
@@ -183,10 +256,10 @@
           </div>
             </section>
             <footer id="contact">
-              <div class="footer">
-                <p>Developed by|Bharath Kbpr&copy;2020</p>
-              </div>
-            </footer>
+                <div class="footer">
+                  <p>Developed by|Bharath Kbpr&copy;2020</p>
+                </div>
+              </footer>
            
             <script>
                 
@@ -257,3 +330,7 @@
               </script>
 </body>
 </html>
+
+
+
+
