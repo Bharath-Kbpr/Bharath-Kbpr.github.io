@@ -67,6 +67,7 @@ body{
     label.logo{
         font-size: 18px;
     }
+    
   }
 
   .cont .text:before,
@@ -265,7 +266,7 @@ a.active,a:hover{
 }
 @media(max-width:952px){
     label.logo{
-        font-size: 16px;
+        font-size: 15px;
         padding-left: 0px;
         
     }
@@ -276,6 +277,7 @@ a.active,a:hover{
 @media(max-width:858px){
      .checkbtn{
          display: block;
+         font-size: 25px;
 
      }
      ul{
@@ -303,6 +305,7 @@ a.active,a:hover{
      }
      #check:checked ~ ul{
          left: 0;
+         
      }
 }
 .banner{
