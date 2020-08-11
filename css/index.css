@@ -447,6 +447,7 @@ img{
     margin-bottom: 3rem;
     font-size: 1.4rem;
     color: #ffffff;
+    letter-spacing: 0.1rem;
 }
 .blog-post-cta{
     display: inline-block;
