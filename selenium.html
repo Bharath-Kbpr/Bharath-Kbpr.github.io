@@ -141,6 +141,7 @@ code{
     letter-spacing: 1pt;
 }
 
+
 @media(max-width:858px){
 .box1 .content p{
     margin: 20px 30px 20px 30px;
@@ -193,35 +194,33 @@ code{
     </nav>
     <section class="box1" id="about">
         <div class="content">
-        <h1>Open CV</h1>
-        <img src="img/opencv1.PNG"alt="computer vision">
-        <h1>What is Computer Vision?</h1>
-         <p>Let me quickly explain what computer vision is before we dive into OpenCV. It’s good to have an intuitive understanding of what we’ll be talking about through the rest of the article.</p>
-
-         <p>The ability to see and perceive the world comes naturally to us humans. It’s second nature for us to gather information from our surroundings through the gift of vision and perception.</p>
-         <img src="img/opencv2.PNG"alt="computer vision">
-         <p>Take a quick look at the above image. It takes us less than a second to figure out there’s a cat, a dog and a pair of human legs. When it comes to machines, this learning process becomes complicated. The process of parsing through an image and detecting objects involves multiple and complex steps, including feature extraction (edges detection, shapes, etc), feature classification, etc.</p>
-         <h3>What Is OpenCV?</h3>
-         <p>OpenCV is a Python library which is designed to solve computer vision problems. OpenCV was originally developed in 1999 by Intel but later it was supported by Willow Garage.
+        <h1>Selenium</h1>
+        <img src="img/p8.png" alt="selenium">
+        <p>If you ask a lazy programmer which is his favorite programming language, there is a high probability that you will get “Python” as an answer. Python is considered as one of the most popular and in-demand programming languages. As you all might be aware, Selenium is the perfect tool for Automation Testing of a web application. Hence, Python helps us to write the Selenium scripts in a much simpler way when compared to other programming languages. </p>
+         <h4 style="text-align:center;font-size: large;">Introduction to Selenium!!</h4 >
+        <p>Selenium is an open source tool which is used for automating the test cases carried out on web browsers or the web applications that are being tested using any web browser. Wait, before you get carried away, let me re-iterate that, only testing of web applications is possible with Selenium. We can neither test any desktop software application nor test any mobile application using Selenium. So it’s an open source tool which supports cross browsing and automates web applications!</p>
+         <p>Now, in order to implement Python with Selenium, we first need to import Selenium web driver!</p>
+         <p>First, let me tell you what is Selenium web driver.</p>
+         <p>WebDriver in Selenium is a web-based Automation Testing framework which can test web pages initiated on various web browsers and various operating systems. In order to import and configure dependencies to add libraries and functionalities, you need to import Selenium Webdriver with the help of below commands.</p>
+         <img src="img/p9.PNG" alt="example"><br>
          
-         <p>OpenCV supports a wide variety of programming languages such as C++, Python, Java etc. Support for multiple platforms including Windows, Linux, and MacOS.
-         
-         <p>OpenCV Python is nothing but a wrapper class for the original C++ library to be used with Python. Using this, all of the OpenCV array structures gets converted to/from NumPy arrays.</p>
-         <p>This makes it easier to integrate it with other libraries which use NumPy. For example, libraries such as SciPy and Matplotlib.</p>
-         <p>Next up on this OpenCV Python Tutorial blog, let us look at some of the basic operations that we can perform with OpenCV. </p>
-         <h3>How Does A Computer Read An Image?</h3>
-         <p>Consider the below image:</p>
-         <img src="img/opencv3.PNG"alt="computer vision">
-         <p>We can figure out that it is an image of the New York Skyline. But, can a computer find this out all on its own? The answer is no!</p>
-         <p>The computer reads any image as a range of values between 0 and 255.</p>
-         <p>For any color image, there are 3 primary channels – Red, green and blue. How it works is pretty simple.</p>
-         <p>A matrix is formed for every primary color and later these matrices combine to provide a Pixel value for the individual R, G, B colors.</p>
-         <p>Each element of the matrices provide data pertaining to the intensity of brightness of the pixel.</p>
-         <p>Consider the following image:<br><br>
-        <img src="img/opencv4.PNG"alt="computer vision" class="imger1">
-         <p>Note: For a black-white image, there is only one single channel.</p>
-        
-        </div>
-      </section >
+         <h4 style="text-align:center;font-size: large;">Locating Web Elements using Python</h4 >
+         <p>The locator is as an address that identifies a web element uniquely within the webpage. Locators are the HTML properties of a web element which tells Selenium about the element it needs to perform the action on. Selenium uses locators to interact with the web elements on the webpage.</p>
+         <p>Now, there is a diverse range of web elements like text box, id, radio button, etc and identifying these elements has always been a very tricky subject. Thus it requires an accurate and effective approach. Thereby, we can say that more effective the locator is, stabler will be the automation script.  Every Selenium command requires locators to find web elements. Thus, to identify these web elements accurately and precisely, we have different types of locators, namely:</p>
+         <ul class="ull"style="list-style-type:disc;">
+             <li>ID</li>
+             <li>name</li>
+             <li>linkText</li>
+             <li>CSS selector</li>
+             <li>XPath</li>
+         </ul>
+         <img src="img/p10.PNG"alt="example" class="imger1">
+         <p>On inspecting the above web element, you can see it has an input tag and attributes like class and id. Now, I will use the value of Id locator i.e. search-field to locate the search box. </p>
+         <img src="img/p11.PNG">
+         <p>Let’s see how to automate the search box and send values to it using Id locator.</p>
+         <img src="img/p12.PNG">
+         <p>When you run the above code, chrome driver will launch Google Chrome, redirect to Hotstar, enter the value as ‘Movies’ in the search box.</p>
+         <p>likeWise we can use name,linkText,css selector,XPath  with the help of these we can locate the web Elements by using python.<a href="https://www.browserstack.com/guide/locators-in-selenium">Locators in Python</a></p>
+    </section >
 </body>
 </html>
